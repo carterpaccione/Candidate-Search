@@ -51,11 +51,15 @@ return (
   <div>
     <h1>CandidateSearch</h1>
     <div id='candidateCard'>
+      <div>
       <img src={candidate.avatar_url} alt={candidate.login} />
+      </div>
       <div id='candidateInfo'>
-        <h2>{candidate.name} {candidate.login}</h2>
-        <p>Location:{candidate.location}</p>
-        <p>Bio:{candidate.bio}</p>
+        <h2>{candidate.name} ({candidate.login})</h2>
+        <p>{candidate.email ? 'Email: ' + candidate.email : null}</p>
+        <p>GitHub: <a href={candidate.html_url} target='_blank'>{candidate.html_url}</a></p>
+        <p>{candidate.location ? 'Location: ' + candidate.location : null}</p>
+        <p>{candidate.company ? 'Company: ' + candidate.company : null}</p>
       </div>
     </div>
     <div id='buttonDiv'>

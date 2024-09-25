@@ -47,12 +47,12 @@ const SavedCandidates = () => {
             <th>Bio</th>
             <th>Reject</th>
           </tr>
-          {candidatesArray.map((candidate: Candidate) => { // map through the array of candidates and create a table row for each
+          {candidatesArray.length > 0 ? candidatesArray.map((candidate: Candidate) => { // map through the array of candidates and create a table row for each
             return (
               <tr className="candidatesTR" key={candidate.id}>
                 <td className="tableID">{candidate.id}</td>
                 <td className="tableImage"> <img src={candidate.avatar_url} alt={candidate.login}></img></td>
-                <td className="tableName">{candidate.name}{candidate.login}</td>
+                <td className="tableName">{candidate.name} ({candidate.login})</td>
                 <td className="tableLocation">{candidate.location}</td>
                 <td className="tableEmail">{candidate.email}</td>
                 <td className="tableCompany">{candidate.company}</td>
@@ -60,7 +60,7 @@ const SavedCandidates = () => {
                 <td className="tableButton"><button id='rejectButton' onClick={handleRejectButton}>Reject</button></td>
               </tr>
             );
-          })}
+          }) : <tr><td colSpan={8}>No candidates have been accepted</td></tr>}
         </table>
       </div>
     </>
