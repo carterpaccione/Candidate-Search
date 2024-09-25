@@ -1,0 +1,41 @@
+/* #tableDiv {
+} */
+
+/* table header */
+
+th {
+    background-color: #f2f2f2;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+/* for the dynamic table body */
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+.candidatesTR:nth-child(odd) {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+.tableImage img {
+    width: 100px;
+    height: 100px;
+}
+
+/* for the button */
+
+#rejectButton {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
