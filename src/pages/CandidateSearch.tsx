@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 import Candidate from '../interfaces/Candidate.interface';
+import './CandidateSearch.css';
 
 const CandidateSearch = () => {
 
@@ -47,16 +48,21 @@ handleLeftSwipe();
 }
 
 return (
-<div>
-  <h1>CandidateSearch</h1>
   <div>
-    <img src={candidate.avatar_url} alt={candidate.login} />
-    <h2>{candidate.login}</h2>
-    <p>{candidate.bio}</p>
+    <h1>CandidateSearch</h1>
+    <div id='candidateCard'>
+      <img src={candidate.avatar_url} alt={candidate.login} />
+      <div id='candidateInfo'>
+        <h2>{candidate.name} {candidate.login}</h2>
+        <p>Location:{candidate.location}</p>
+        <p>Bio:{candidate.bio}</p>
+      </div>
+    </div>
+    <div id='buttonDiv'>
+      <button id='leftButton' onClick={handleLeftSwipe}>-</button>
+      <button id='rightButton' onClick={handleRightSwipe}>+</button>
+    </div>
   </div>
-  <button onClick={handleLeftSwipe}>-</button>
-  <button onClick={handleRightSwipe}>+</button>
-</div>
 );
 };
 

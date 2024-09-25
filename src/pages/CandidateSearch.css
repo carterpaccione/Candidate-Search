@@ -1,0 +1,52 @@
+#candidateCard {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5% 5% 0% 0%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 350px;
+    height: 500px;
+}
+
+#candidateCard img {
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+}
+
+#candidateCard h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+#candidateInfo {
+    width: 100%;
+    text-align: center;
+    text-wrap: wrap;
+    background-color: black;
+}
+
+#buttonDiv {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#leftButton {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+}
+
+#rightButton {
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+}
