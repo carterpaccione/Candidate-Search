@@ -39,12 +39,16 @@ const handleLeftSwipe = () => {
   });
 }
 // function for right swipe; save candidate to candidatesArray; search again
+// if candidate is undefined, do not save to candidatesArray; temporary fix for displaying empty candidates when searched.
 
 const handleRightSwipe = () => {
-const newCandidatesArray: Candidate[] = [...candidatesArray, candidate];
-setCandidatesArray(newCandidatesArray);
-localStorage.setItem('candidatesArray', JSON.stringify(newCandidatesArray));
-handleLeftSwipe();
+  if(candidate.login !== undefined || null) {
+    const newCandidatesArray: Candidate[] = [...candidatesArray, candidate];
+    setCandidatesArray(newCandidatesArray);
+    localStorage.setItem('candidatesArray', JSON.stringify(newCandidatesArray));
+    handleLeftSwipe();
+  }
+    handleLeftSwipe();
 }
 
 return (
