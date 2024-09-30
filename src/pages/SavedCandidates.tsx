@@ -32,9 +32,40 @@ const SavedCandidates = () => {
 
   }
 
+  // Filter function to sort candidatesArray by login(name) in ascending or descending order
+  // Used Bootstrap dropdown menu so the target is an anchor element
+
+
+  const handleFilter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = e.target as HTMLAnchorElement;
+    const id = target.id;
+    console.log(id);
+    const newArray = [...candidatesArray];
+    console.log(newArray)
+    if (id === 'ascendSort') { // sort by login in ascending order
+      newArray.sort((a, b) => a.login.localeCompare(b.login)); // classic sort function to compare strings
+    } else if (id === 'descendSort') { // sort by login in descending order
+      newArray.sort((a, b) => b.login.localeCompare(a.login));
+    }
+    setCandidatesArray(newArray);
+  }
+
   return (
     <>
       <h1>Potential Candidates</h1>
+      <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sort
+        </button>
+        <ul className="dropdown-menu">
+          <li><a className="dropdown-item" href="#" id="ascendSort"
+          onClick={handleFilter}>
+            A-Z</a></li>
+          <li><a className="dropdown-item" href="#" id="descendSort"
+          onClick={handleFilter}>
+            Z-A</a></li>
+        </ul>
+      </div>
       <div id="tableDiv">
         <table>
           <tr>
