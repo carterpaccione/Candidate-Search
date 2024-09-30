@@ -24,7 +24,7 @@ useEffect(() => {
     searchGithubUser(data[0].login).then((user) => {
       // console.log(user)
       setCandidate(user);
-      console.log(candidate)
+      console.log(user)
     });
   });
 }, []);
